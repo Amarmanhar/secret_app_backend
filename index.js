@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express()
 const cors = require('cors');
+const PORT = process.env.PORT || 8000
 
 const mongodb = require('./db/db')
 
@@ -18,6 +19,6 @@ app.use('/password', PasswordRouter);
 
 
 mongodb();
-app.listen(process.env.PORT, ()=>{
-    console.log("Server is running on port 8000");
+app.listen(PORT, ()=>{
+    console.log(`Server is running on port ${PORT}`);
 })
